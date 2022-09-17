@@ -1,0 +1,30 @@
+@media screen and (max-width : 600px) {
+    .calculator {
+        height: 555px;
+        width: 321px;
+    }
+
+    #screen {
+        height: 100px;
+        width: 281px;
+        margin: 20px 21px 0px 21px;
+    }
+
+    .keys {
+        height: 60px;
+        width: 60px;
+        margin: 0;
+    }
+
+    .keyContainer {
+        margin: 12px;
+    }
+
+    #clear {
+        width: 133px;
+    }
+
+    #plus {
+        height: 139px;
+    }
+}

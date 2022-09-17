@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes calculator3d {
+    to {
+        transform: unset;
+    }
+}
+
+@keyframes screenKeys3d {
+    to {
+        transform: unset;
+    }
+}
+
+body {
+    transition: background-color 500ms;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.colorMode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #555;
+    border: 2px solid #edf1f4;
+    cursor: pointer;
+    transition: background-image 500ms;
+    overflow: hidden;
+}
+
+.colorModeToggle {
+    background-color: #eee;
+    border: 2px solid #333;
+}
+
+.colorModeSlider {
+    height: 40px;
+    width: 105px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 500ms ease-out;
+    transform: translate(1px, -2px);
+    user-select: none;
+    background-color: transparent;
+}
+
+.topIcons {
+    height: 35px;
+}
+
+.colorModeToggle.colorModeSlider{
+    transform: translate(-67px, -2px);
+}
+
+.calculator {
+    height: 685px;
+    width: 576px;
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+    border-radius: 20px;
+    box-shadow: 15px 15px 20px rgb(0, 0, 0, 0.1);
+    transition: background-color 500ms, color 500ms, box-shadow 100ms;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(35px) translateY(0px) translateZ(0px);
+}
+
+.calculatorAnimation {
+    animation: calculator3d 2000ms ease-in-out forwards;
+}
+
+#screen {
+    height: 72%;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    color: #5166d6;
+    border-radius: 10px;
+    border: none;
+    font-size: 50px;
+    padding: 10px;
+    letter-spacing: 2px;
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0, 0.1), inset -5px -5px 20px white;
+    transition: background-color 500ms, color 500ms, box-shadow 100ms;
+    transform: perspective(1000px) translateX(20px) translateY(20px) translateZ(180px);
+}
+
+.screenKeysAnimation {
+    animation: screenKeys3d 1000ms ease-in-out forwards;
+}
+
+.keysContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    place-items: center;
+    margin: 22px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) translateX(20px) translateY(20px) translateZ(120px);
+}
+
+.keys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.1), -5px -5px 20px white;
+    cursor: pointer;
+    user-select: none;
+    font-size: 30px;
+    color: #666;
+    border: 2px solid #edf1f4;
+    transition: background-color 500ms, color 500ms, box-shadow 100ms;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.keys:active {
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0, 0.1),
+        inset -5px -5px 20px white;
+    color: #f44336;
+}
+
+#clear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 214px;
+    background-color: #f44336;
+}
+
+#plus { background-color: #31a935; }
+
+#backspace { background-color: #fce654; }
+
+#equal { background-color: #2196f3; }
+
+#clear,
+#plus,
+#backspace,
+#equal{
+    color: white;
+}
+
+#clear:active,
+#plus:active,
+#equal:active {
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.1),
+        -5px -5px 10px white;
+}
+
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark {
+    background-color: #282c2f;
+}
+
+.dark .calculator {
+    background-color: #33393e;
+    box-shadow: 15px 15px 20px rgb(0, 0, 0, 0.25),
+        -15px -15px 20px rgb(255, 255, 255, 0.1);
+}
+
+.dark #screen {
+    color: #eee;
+    box-shadow: inset 15px 15px 20px rgb(0, 0, 0, 0.5),
+        inset -15px -15px 20px rgb(255, 255, 255, 0.1);
+}
+
+.dark .keys {
+    color: #eee;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.25),
+        -5px -5px 10px rgb(255, 255, 255, 0.1);
+}
+
+.dark .keys:active {
+    color: #eee;
+    border: 2px solid #333;
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0, 0.25),
+        inset -5px -5px 10px rgb(255, 255, 255, 0.1);
+}
+
+.dark #clear,
+.dark #plus,
+.dark #equal {
+    border: 2px solid #333;
+}
+
+.dark #clear:active,
+.dark #plus:active,
+.dark #equal:active {
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0, 0.1);
+}

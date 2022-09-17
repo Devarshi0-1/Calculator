@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="icon" type="image/x-icon" href="./img/calculator.png">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container flex-center-center">
+        <div class="colorMode">
+            <div class="colorModeSlider">
+                <img class="topIcons" src="./img/moon.svg" alt="Moon image">
+                <img class="topIcons" src="./img/sun.svg" alt="Sun image">
+            </div>
+        </div>
+        <main class="calculator calculatorAnimation">
+            <input class="screenKeysAnimation" id="screen" type="text" name="CalcScreen" readonly>
+            <section class="keysContainer screenKeysAnimation">
+                <span id="clear" class="keys">Clear</span>
+                <span class="keys">/</span>
+                <span class="keys">*</span>
+                <span class="keys">7</span>
+                <span class="keys">8</span>
+                <span class="keys">9</span>
+                <span class="keys">-</span>
+                <span class="keys">4</span>
+                <span class="keys">5</span>
+                <span class="keys">6</span>
+                <span id="plus" class="keys">+</span>
+                <span class="keys">1</span>
+                <span class="keys">2</span>
+                <span class="keys">3</span>
+                <span id="backspace" class="keys">></span>
+                <span class="keys">0</span>
+                <span class="keys">00</span>
+                <span class="keys">.</span>
+                <span id="equal" class="keys"> =</span>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
