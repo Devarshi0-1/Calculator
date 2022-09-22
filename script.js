@@ -2,6 +2,7 @@ const body = document.body
 const colorModeBtn = document.querySelector('.colorMode');
 const colorModeSlider = document.querySelector('.colorModeSlider');
 const calculator = document.querySelector('.calculator');
+const keysContainer = document.querySelector('.keysContainer')
 const screen = document.querySelector("#screen");
 const keys = document.querySelectorAll(".keys");
 const keysArr = [...keys];
@@ -28,20 +29,19 @@ window.addEventListener('keydown', (e) => {
     localStorage.setItem("screenData", screen.value)
 })
 
-
-keysArr.forEach(key => {
-    key.addEventListener('click', () => {
-        keyValue = key.innerText
-        if (keyValue === 'Clear')
-            screen.value = ''
-        else if (keyValue === '=' && screen.value !== '')
-            screen.value = eval(screen.value)
-        else if (keyValue === '>')
-            screen.value = screen.value.slice(0, -1)
-        else
-            screen.value += keyValue
-        localStorage.setItem("screenData", screen.value)
-    })
+keysContainer.addEventListener('click', (event) => {
+    if (event.target.matches('span')){
+                keyValue = event.target.innerText
+                if (keyValue === 'Clear')
+                    screen.value = ''
+                else if (keyValue === '=' && screen.value !== '')
+                    screen.value = eval(screen.value)
+                else if (keyValue === '>')
+                    screen.value = screen.value.slice(0, -1)
+                else
+                    screen.value += keyValue
+                localStorage.setItem("screenData", screen.value)
+    }
 })
 
 colorModeBtn.addEventListener('click', modeSwitch)
