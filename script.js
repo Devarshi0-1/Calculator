@@ -14,33 +14,29 @@ if (localStorage.getItem('currentMode') !== null && localStorage.getItem('curren
 }
 
 window.addEventListener('keydown', (e) => {
-    if (!(isNaN(e.key)) || e.key === '/' || e.key === '*' || e.key === '-' || e.key === '+' || e.key === '.') {
+    if (!(isNaN(e.key)) || e.key === '/' || e.key === '*' || e.key === '-' || e.key === '+' || e.key === '.') 
         screen.value += e.key
-    }
-    else if (e.key === 'Enter' && screen.value !== '') {
+    else if (e.key === 'Enter' && screen.value !== '')
         screen.value = eval(screen.value)
-    }
-    else if (e.key === '>') {
+    else if (e.key === 'Backspace')
         screen.value = screen.value.slice(0, -1)
-    }
-    else if (e.ctrlKey && e.key === 'Backspace') {
+    else if (e.ctrlKey && e.key === 'Backspace')
         screen.value = ''
-    }
     localStorage.setItem("screenData", screen.value)
 })
 
 keysContainer.addEventListener('click', (event) => {
-    if (event.target.matches('span')){
-                keyValue = event.target.innerText
-                if (keyValue === 'Clear')
-                    screen.value = ''
-                else if (keyValue === '=' && screen.value !== '')
-                    screen.value = eval(screen.value)
-                else if (keyValue === '>')
-                    screen.value = screen.value.slice(0, -1)
-                else
-                    screen.value += keyValue
-                localStorage.setItem("screenData", screen.value)
+    if (event.target.matches('span')) {
+        keyValue = event.target.innerText
+        if (keyValue === 'Clear')
+            screen.value = ''
+        else if (keyValue === '=' && screen.value !== '')
+            screen.value = eval(screen.value)
+        else if (keyValue === '>')
+            screen.value = screen.value.slice(0, -1)
+        else
+            screen.value += keyValue
+        localStorage.setItem("screenData", screen.value)
     }
 })
 
